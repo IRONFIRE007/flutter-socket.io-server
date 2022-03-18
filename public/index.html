@@ -22,7 +22,19 @@
 
         socket.on('message',function(payload){
             console.log('Listeng :',payload);
-        })
+        });
+
+        socket.on('new-message', (payload)=> { 
+      //   io.emit('new-message',payload); Send All Clients
+         console.log('new-message',payload);
+      });
+   
+      socket.on('active-bands', (bands)=> { 
+      //   io.emit('new-message',payload); Send All Clients
+      console.clear();
+         console.table(bands);
+      });
+
     </script>
 </body>
 </html>
